@@ -1,0 +1,64 @@
+@startuml DataClasses
+left to right direction
+
+class AppData {
+    database
+    selectedStudent: Student
+    selectedGroup: Group
+    settings
+}
+
+class Database {
+    groups: [group]
+    skills: [skill]
+}
+
+class Group {
+    name: string
+    year : int
+    selected : bool
+    students : [student]
+    addStudent()
+    removeStudent()
+}
+
+class Student {
+    id: int
+    name: string
+    result: float
+    selected: bool
+    strongSkills: [skill]
+    poorSkills: [skill]
+    previousFeedback: [feedback]
+    feedback generateFeedback()
+}
+
+class Feedback {
+    year: int
+    period: int
+    feedbackText: string
+}
+
+class Skill {
+    positiveFeedback: [string]
+    negativeFeedback: [string]
+    tips: [string]
+}
+
+class Settings {
+    period: int
+    passingThreshold: int
+    isPeriodBeforeVacation: bool
+}
+
+' Relationships
+AppData <-- Database
+AppData <-- Settings
+
+Database *-- Group
+Database o-- Skill
+Group *-- Student
+Student o-- Feedback
+Student o-- Skill
+
+@enduml

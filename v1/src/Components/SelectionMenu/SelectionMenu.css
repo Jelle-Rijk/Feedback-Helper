@@ -1,0 +1,25 @@
+#selectionmenu {
+  background-color: grey;
+  height: 90vh;
+  max-width: 20rem;
+
+  display: flex;
+  flex-direction: column;
+  border-right: solid black 0.2rem;
+}
+
+#group-selector {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+#group-selector > select {
+  grid-column: 1/4;
+}
+#group-selector > button {
+  grid-column: 4/5;
+}
+
+.student-select-element {
+  background: rgb(197, 197, 197);
+  border-bottom: 1px grey solid;
+}

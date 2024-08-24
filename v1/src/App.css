@@ -1,0 +1,21 @@
+header {
+  min-height: 50px;
+  background: lightcyan;
+}
+
+main {
+  display: flex;
+  justify-content: base;
+}
+
+main > div {
+  width: 50vw;
+}
+
+footer {
+  position: absolute;
+  bottom: 0px;
+  min-width: 100vw;
+  min-height: 50px;
+  background-color: papayawhip;
+}
